@@ -1,6 +1,6 @@
 {
   "name": "styled-components-mq",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "A port of sass-mq for styled-components to help you compose media queries in an elegant way.",
   "main": "mq.js",
   "repository": {
