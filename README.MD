@@ -12,14 +12,14 @@
 
 ## Install
 
-Install `styled-components-mq` using npm:
+Install `styled-components-sass-mq` using npm:
 
 ```
-npm install --save styled-components-mq
+npm install --save styled-components-sass-mq
 ```
 
 ## Usage
-Refer to [sass-mq](https://github.com/sass-mq/sass-mq) docs for a full list of options. `styled-components-mq` provides feature parity with [sass-mq](https://github.com/sass-mq/sass-mq), with exception to its `show-breakpoint` and `add-breakpoint` functions.
+Refer to [sass-mq](https://github.com/sass-mq/sass-mq) docs for a full list of options. `styled-components-sass-mq` provides feature parity with [sass-mq](https://github.com/sass-mq/sass-mq), with exception to its `show-breakpoint` and `add-breakpoint` functions.
 
 Here's a basic example:
 
