@@ -5,21 +5,21 @@
 <br />
 
 <div align="center">
-	<strong>A port of [sass-mq](https://github.com/sass-mq/sass-mq) for [styled-components](https://github.com/styled-components/styled-components) to help you compose media queries in an elegant way.</strong>
+	<strong>A port of <a href='https://github.com/sass-mq/sass-mq'>sass-mq</a> for <a href='https://github.com/styled-components/styled-components'>styled-components</a> to help you compose media queries in an elegant way.</strong>
 	<br />
 	<br />
 </div>
 
 ## Install
 
-Install `styled-components-mq` from npm:
+Install `styled-components-mq` using npm:
 
 ```
 npm install --save styled-components-mq
 ```
 
 ## Usage
-Refer to [sass-mq](https://github.com/sass-mq/sass-mq) docs for a full list of options. `styled-components-mq` provides feature parity with [sass-mq](https://github.com/sass-mq/sass-mq), with exception to its 'show-breakpoint' and 'add-breakpoint' functions.
+Refer to [sass-mq](https://github.com/sass-mq/sass-mq) docs for a full list of options. `styled-components-mq` provides feature parity with [sass-mq](https://github.com/sass-mq/sass-mq), with exception to its `show-breakpoint` and `add-breakpoint` functions.
 
 Here's a basic example:
 
