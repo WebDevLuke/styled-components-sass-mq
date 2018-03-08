@@ -27,7 +27,7 @@ Here's a basic example:
 import React from 'react';
 
 import styled from 'styled-components';
-import mq from 'styled-components-mq';
+import mq from 'styled-components-sass-mq';
 
 // Use sass-mq default breakpoints, or like below, provide your own
 const breakpoints = {
