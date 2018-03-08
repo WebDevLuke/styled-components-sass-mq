@@ -1,13 +1,13 @@
 {
-  "name": "styled-components-mq",
+  "name": "styled-components-sass-mq",
   "version": "0.0.1",
   "description": "A port of sass-mq for styled-components to help you compose media queries in an elegant way.",
   "main": "mq.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/WebDevLuke/styled-components-mq.git"
+    "url": "git+https://github.com/WebDevLuke/styled-components-sass-mq.git"
   },
-  "homepage": "https://github.com/WebDevLuke/styled-components-mq#readme",
+  "homepage": "https://github.com/WebDevLuke/styled-components-sass-mq#readme",
   "keywords": [
     "sass-mq",
     "styled-components",
@@ -24,6 +24,6 @@
   "author": "Luke Harrison",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/WebDevLuke/styled-components-mq/issues"
+    "url": "https://github.com/WebDevLuke/styled-components-sass-mq/issues"
   }
 }
