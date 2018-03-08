@@ -7,7 +7,7 @@
     "type": "git",
     "url": "git+https://github.com/WebDevLuke/styled-components-mq.git"
   },
-  "homepage": "http://www.lukeharrison.net",
+  "homepage": "https://github.com/WebDevLuke/styled-components-mq#readme",
   "keywords": [
     "sass-mq",
     "styled-components",
@@ -25,6 +25,5 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/WebDevLuke/styled-components-mq/issues"
-  },
-  "homepage": "https://github.com/WebDevLuke/styled-components-mq#readme"
+  }
 }
