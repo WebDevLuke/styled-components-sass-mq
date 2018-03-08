@@ -20,21 +20,23 @@ const getBreakpointWidth = (breakpoint, breakpoints) => {
 }
 
 /*
-from,
-until,
-and,
+Full parameters:
+
+from
+until
+and
 mediaType
-breakpoints,
-baseFontSize,
-responsive,
-staticBreakpoint,
+breakpoints
+baseFontSize
+responsive
+staticBreakpoint
 content
 */
 
 const mq = (args) => {
 
 	// Process default args
-	const options = {...args};
+	const options = Object.assign({}, args);
 	options.breakpoints = options.breakpoints ? options.breakpoints : breakpoints;
 	options.mediaType = options.mediaType ? options.mediaType : 'all';
 	options.baseFontSize = options.baseFontSize ? options.baseFontSize : 16;
