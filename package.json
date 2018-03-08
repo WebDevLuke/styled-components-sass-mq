@@ -7,6 +7,7 @@
     "type": "git",
     "url": "git+https://github.com/WebDevLuke/styled-components-mq.git"
   },
+  "homepage": "http://www.lukeharrison.net",
   "keywords": [
     "sass-mq",
     "styled-components",
