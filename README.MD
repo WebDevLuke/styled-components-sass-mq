@@ -54,7 +54,7 @@ const Title = styled.h1`
 const Wrapper = styled.section`
   padding: 4em;
   background: papayawhip;
-  ${mq({from: 'md', until: 'lg3', and: '(orientation: landscape)', mediaType: 'only screen'})`
+  ${mq({from: 'md', until: 'xlg', and: '(orientation: landscape)', mediaType: 'only screen'})`
   	background: red;
   `}
 `;
