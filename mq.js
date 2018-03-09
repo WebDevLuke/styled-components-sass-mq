@@ -1,4 +1,4 @@
-const breakpoints =  {
+const defaultBreakpoints =  {
 	mobile: 320,
 	tablet: 740,
 	desktop: 980,
@@ -33,11 +33,10 @@ staticBreakpoint
 content
 */
 
-const mq = (args) => {
+const queryGenerator = (args, breakpoints) => {
 
 	// Process default args
 	const options = Object.assign({}, args);
-	options.breakpoints = options.breakpoints ? options.breakpoints : breakpoints;
 	options.mediaType = options.mediaType ? options.mediaType : 'all';
 	options.baseFontSize = options.baseFontSize ? options.baseFontSize : 16;
 	options.responsive = options.responsive !== undefined ? options.responsive : true;
@@ -53,7 +52,7 @@ const mq = (args) => {
 			minWidth = pxToEm(options.from, options.baseFontSize);
 		}
 		else {
-			minWidth = pxToEm(getBreakpointWidth(options.from, options.breakpoints), options.baseFontSize);
+			minWidth = pxToEm(getBreakpointWidth(options.from, breakpoints), options.baseFontSize);
 		}
 	}
 
@@ -63,14 +62,14 @@ const mq = (args) => {
 			maxWidth = pxToEm(options.until, options.baseFontSize);
 		}
 		else {
-			maxWidth = pxToEm(getBreakpointWidth(options.until, options.breakpoints) - .01, options.baseFontSize);
+			maxWidth = pxToEm(getBreakpointWidth(options.until, breakpoints) - .01, options.baseFontSize);
 		}
 	}
 
 	// Responsive support is disabled, rasterize the output outside @media blocks
 	// The browser will rely on the cascade itself.
 	if(!options.responsive) {
-		const staticBreakpointWidth = getBreakpointWidth(options.staticBreakpoint, options.breakpoints);
+		const staticBreakpointWidth = getBreakpointWidth(options.staticBreakpoint, breakpoints);
 		const targetWidth = pxToEm(staticBreakpointWidth, options.baseFontSize);
 		// Output only rules that start at or span our target width
 		if(!options.and && parseFloat(minWidth) <= parseFloat(targetWidth) && (!options.until || parseFloat(maxWidth) >= parseFloat(targetWidth))) {
@@ -90,11 +89,18 @@ const mq = (args) => {
 
 		// Compose media query
 		return `
-			@media ${options.mediaType + mediaQuery} {
-				${options.content}
-			}
+			${options.mediaType + mediaQuery}
 		`
 	}
 }
 
-export default mq;
+const createMediaQueries = (breakpoints = defaultBreakpoints) => {
+	return (options) => {
+		const query = queryGenerator(options, breakpoints);
+		return (content) => {
+			return `@media ${query} { ${content} }`;
+		}
+	};
+}
+
+export default createMediaQueries;

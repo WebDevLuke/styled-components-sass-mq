@@ -27,9 +27,9 @@ Here's a basic example:
 import React from 'react';
 
 import styled from 'styled-components';
-import mq from 'styled-components-mq';
+import createMediaQueries from 'styled-components-mq';
 
-// Use sass-mq default breakpoints, or like below, provide your own
+// Use sass-mq default breakpoints, or like below, create your own
 const breakpoints = {
   "sm": 370,
   "md": 768,
@@ -37,21 +37,26 @@ const breakpoints = {
   "xlg": 1440
 }
 
+// Inject your custom breakpoints into the mq function
+const mq = createMediaQueries(breakpoints);
+
+// Use like below
 const Title = styled.h1`
   font-size: 2.5em;
   text-align: center;
   color: palevioletred;
-  ${mq({from: 'md', breakpoints: breakpoints, content: `
-    font-size: 5em;
-  `})}
+  ${mq({from: 'md'})`
+  	font-size: 5em;
+  `}
 `;
 
+// A more advanced example
 const Wrapper = styled.section`
   padding: 4em;
   background: papayawhip;
-  ${mq({from: 'md', until: 'xlg', and: '(orientation: landscape)', breakpoints: breakpoints, content: `
-    background: red;
-  `})}
+  ${mq({from: 'md', until: 'lg3', and: '(orientation: landscape)', mediaType: 'only screen'})`
+  	background: red;
+  `}
 `;
 
 <Wrapper>
