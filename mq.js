@@ -73,7 +73,7 @@ const queryGenerator = (args, breakpoints) => {
 		const targetWidth = pxToEm(staticBreakpointWidth, options.baseFontSize);
 		// Output only rules that start at or span our target width
 		if(!options.and && parseFloat(minWidth) <= parseFloat(targetWidth) && (!options.until || parseFloat(maxWidth) >= parseFloat(targetWidth))) {
-			return options.content
+			return true;
 		}
 	}
 	else {
@@ -97,6 +97,9 @@ const queryGenerator = (args, breakpoints) => {
 const createMediaQueries = (breakpoints = defaultBreakpoints) => {
 	return (options) => {
 		const query = queryGenerator(options, breakpoints);
+		if(typeof query === 'boolean' && query) {
+			return (content) => content;
+		}
 		return (content) => {
 			return `@media ${query} { ${content} }`;
 		}
